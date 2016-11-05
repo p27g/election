@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="utf-8" />
+     {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Averia+Libre|Cormorant+Upright" rel="stylesheet" >
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+        <link href="https://www.highcharts.com/highslide/highslide.css" rel="stylesheet" />
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://code.highcharts.com/highcharts.js"></script>
+        <script type="text/javascript" src="https://code.highcharts.com/highcharts-more.js"></script>
+        <script type="text/javascript" src="https://code.highcharts.com/modules/heatmap.js"></script>
+        <script type="text/javascript" src="https://code.highcharts.com/modules/exporting.js"></script>
+
+	<title>Hashtags</title>
+</head>
+
+<body>
+<link rel="stylesheet" type="text/css" href="{% static 'elections/style2.css' %}" />
+
+<nav class="navbar navbar-inverse">
+<div class="container-fluid">
+
+<!--Header-->
+<nav class="navbar navbar-light bg-faded">
+  <a class="navbar-brand mb-0">
+  <img src="http://vignette4.wikia.nocookie.net/simpsons/images/1/11/Twitter_bird_icon.png/revision/latest?cb=20111228065136" width="50" height="40" class="d-inline-block align-top" alt="Twitter">
+      #USElections2016
+      </a>
+<!--ITEMS-->
+
+<div class="collapse navbar-collapse" id="topNavBar">
+	<ul class="nav navbar-nav navbar-right">
+			<li class="">
+					<a href="{% url 'elections:analysis' %}">Back
+						<span class="glyphicon glyphicon-hand-left" aria-hidden="true"></span>&nbsp
+					</a>
+			</li>
+
+			<li class="">
+					<a href="{% url 'elections:home' %}">Home
+						<span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp
+					</a>
+			</li>
+	</ul>
+</div>
+</div>
+</div>
+</nav>
+</body>
+
+<body style="margin:0;padding:0">
+                <div id="container" style="">Loading....</div>
+
+
+    <script>
+        $(function(){
+            Highcharts.setOptions({"lang": {}, "global": {}});
+            var option = {"loading": {}, "subtitle": {}, "xAxis": {"categories": ["#USelections", "#trump/Donaldtrump", "#clinton/hillaryclinton", "#FBI", "#WorldSeries", "#postseason", "#Comey", "#Breaking", "#MAGA", "#AP"], "title": {"text": "Hashtags"}}, "title": {"text": "Top 10 popular hashtags"}, "series": {}, "labels": {}, "chart": {"renderTo": "container", "type": "line"}, "tooltip": {}, "plotOptions": {}, "yAxis": {"title": {"text": "Occurrence"}}, "credits": {"enabled": false}, "colors": {}, "pane": {}, "exporting": {}, "drilldown": {}, "navigation": {}, "legend": {"enabled": true}};
+            var data = [{"data": [1475, 8363, 10457, 755, 945, 674, 208, 361, 523, 359], "type": "line", "name": "Series 1"}];
+            option.series = data;
+            var chart = new Highcharts.Chart(option);
+
+    });
+        </script>
+
+    </body>
+
+<h3><b>
+ <p align="center"> Top 10 hashtags used in all the tweets were found out by using nltk in python. Hashtags such as #hillary,#clinton were counted as one. </p>
+</b>
+</h3>
+
+
+</body>
+
+<body>
+	<style>
+      body {
+        font-family: 'Cormorant Upright', serif;
+        font-size: 20px;
+      }
+    </style>
+</body>
+
+</html>

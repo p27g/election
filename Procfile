@@ -1,3 +1,3 @@
-web gunicorn tango.wsgi --log-file -
+web: gunicorn tango.wsgi --log-file -
 
 

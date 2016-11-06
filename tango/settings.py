@@ -25,6 +25,7 @@ SECRET_KEY = 'pr&d=#lq^8by+o7f#9j891ta^m!25bbchvqh!o!o6mx5_c&d5*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+
 ALLOWED_HOSTS = ['mypavilion.herokuapp.com']
 
 
